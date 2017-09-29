@@ -1,0 +1,31 @@
+{
+  "name": "calisoft-extension",
+  "version": "1.0.0",
+  "main": "popup.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "watch": "webpack -w",
+    "postinstall": "webpack"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.49",
+    "@types/react": "^16.0.7",
+    "@types/react-bootstrap": "^0.31.4",
+    "@types/react-dom": "^15.5.5",
+    "@types/react-redux": "^5.0.9",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.5.3",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0"
+  }
+}
