@@ -4,21 +4,15 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Store } from './store'
 
-import { Row, Col, Button, Panel, ButtonGroup } from 'react-bootstrap';
+import { Button, Panel, ButtonGroup } from 'react-bootstrap';
 
 
 export default class App extends React.Component<null, any> {
 
-    getStates() {
-        console.log(Store.getState())
-        chrome.runtime.sendMessage(Store.getState())
-    }
-
     render() {
         return (
             <Provider store={Store}>
-
-                <Panel style={{ marginBottom: "0" }} bsStyle="success" >
+                <Panel style={{ marginBottom: "0px" }} bsStyle="success" >
                     <div className="text-center">
                         <ButtonGroup>
                             <Button bsStyle="danger">Cargar Formulario</Button>
@@ -26,17 +20,10 @@ export default class App extends React.Component<null, any> {
                         </ButtonGroup>
                     </div>
                     <hr />
-
-
                     <Button block bsStyle="success">PRUEBA DE CARGA</Button>
                     <Button block bsStyle="success">PRUEBA DE ESTRÉS</Button>
-
-
                 </Panel>
-
-
             </Provider>
-
         );
     }
 }
