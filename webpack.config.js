@@ -1,11 +1,11 @@
 const path = require('path');
-
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: "./src/app.tsx",
-        events: "./src/events.ts",
-        content: "./src/content.ts"
+        popup: "./src/popup.js",
+        events: "./src/events.js",
+        content: "./src/content.js"
     },
     output: {
         path: path.resolve("extension/dist"),
@@ -13,13 +13,29 @@ module.exports = {
         publicPath: "/assets"
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.js', '.vue'],
+
     },
     module: {
         rules: [
-            { test: /.tsx?$/, loader: 'ts-loader' },
-            { test: /.css$/, use: ['style-loader', 'css-loader'] },
+            { test: /\.vue$/, loader: 'vue-loader' },
+            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
         ]
-    }
+    },
+
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': "'production'"
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
 }
+
