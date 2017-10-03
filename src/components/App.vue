@@ -15,6 +15,6 @@
 import FormSection from './FormSection'
 
 export default {
-    components: { FormSection }
+    components: { FormSection },
 }
 </script>

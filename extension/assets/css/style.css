@@ -1,3 +1,10 @@
-.ext-background {
-    background: url("../img/back.png")
+
+form.calisoft-form-extension {
+    border: 5px dashed red;
+    padding: 15px;
+    cursor: pointer;
+}
+
+form.calisoft-form-extension:hover {
+    border-color: blue;
 }

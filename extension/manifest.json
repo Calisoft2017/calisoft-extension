@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Calisoft",
     "description": "Esta extension le perimitira al usuario completar la evaluacion de plataforma",
-    "version": "1.0",
+    "version": "1.0.0.2",
     "devtools_page": "devtools.html",
     "background": {
         "scripts": [
@@ -15,7 +15,9 @@
             "matches": [
                 "*://*/*"
             ],
-            "css": [],
+            "css": [
+                "assets/css/style.css"
+            ],
             "js": [
                 "dist/content.js"
             ]
