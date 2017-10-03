@@ -3,9 +3,10 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        popup: "./src/popup.js",
-        events: "./src/events.js",
-        content: "./src/content.js"
+        panel: "./src/panel.js",
+        background: "./src/background.js",
+        content: "./src/content.js",
+        devtools: "./src/devtools.js"
     },
     output: {
         path: path.resolve("extension/dist"),

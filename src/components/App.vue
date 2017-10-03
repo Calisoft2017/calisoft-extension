@@ -1,5 +1,5 @@
 <template>
-    <v-app style="width: 340px">
+    <v-app>
         <v-toolbar class="green">
             <v-toolbar-title>
                 <img src="assets/img/calisoft.png" alt="">

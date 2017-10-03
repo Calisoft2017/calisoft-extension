@@ -3,15 +3,12 @@
     "name": "Calisoft",
     "description": "Esta extension le perimitira al usuario completar la evaluacion de plataforma",
     "version": "1.0",
+    "devtools_page": "devtools.html",
     "background": {
         "scripts": [
-            "dist/events.js"
+            "dist/background.js"
         ],
         "persistent": true
-    },
-    "browser_action": {
-        "dafault_title": "Calisoft",
-        "default_popup": "popup.html"
     },
     "content_scripts": [
         {
