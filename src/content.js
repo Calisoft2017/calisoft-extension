@@ -7,6 +7,5 @@ const ACTIONS = {
 }
 
 chrome.runtime.onMessage.addListener((message, seeder, sendResponse) => {
-    let result = ACTIONS[message.type](message.payload)
-    sendResponse({ result });
+    ACTIONS[message.type](message.payload);
 })

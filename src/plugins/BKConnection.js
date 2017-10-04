@@ -1,3 +1,4 @@
+
 export default {
     install(Vue) {
         let connection = chrome.runtime.connect({ name: 'panel ' })

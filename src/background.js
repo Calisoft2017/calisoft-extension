@@ -1,8 +1,5 @@
 
-
-
-
-
+//connection with dev tools
 chrome.runtime.onConnect.addListener(devPort => {
 
     function devPortListenter(message, seeder, sendResponse) {
@@ -18,3 +15,5 @@ chrome.runtime.onConnect.addListener(devPort => {
     })
 
 })
+
+

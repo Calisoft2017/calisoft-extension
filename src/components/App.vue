@@ -16,5 +16,8 @@ import FormSection from './FormSection'
 
 export default {
     components: { FormSection },
+    created() {
+        chrome.runtime.onMessage.addListener(message => this.$store.commit(message))
+    }
 }
 </script>

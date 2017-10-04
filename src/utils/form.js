@@ -24,7 +24,7 @@ export function detachForms() {
  */
 export function selectForm(event) {
     let form = getFormInputs(event.currentTarget)
-    chrome.runtime.sendMessage({ type: 'selectForm', payload: form })
+    chrome.runtime.sendMessage({ type: 'SELECT_FORM', form })
 }
 
 /**

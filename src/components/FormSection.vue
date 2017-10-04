@@ -9,6 +9,9 @@
                 </v-layout>
             </v-container>
         </v-card-media>
+        <v-card-text v-show="form">
+            {{ form }}
+        </v-card-text>
         <v-card-actions>
             <v-layout>
                 <v-flex class="text-xs-center">
@@ -20,14 +23,10 @@
     </v-card>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
-    name: 'form-section',
-    created() {
-        chrome.runtime.onMessage.addListener(this.selectForm.bind(this))
-    },
     data() {
         return {
-            form: null,
             formsAttached: false
         }
     },
@@ -35,15 +34,17 @@ export default {
         attach() {
             this.$send('ATTACH_FORMS')
             this.formsAttached = true
+            this.jso
         },
         detach() {
             this.$send('DETACH_FORMS')
             this.formsAttached = false
-        },
-        selectForm(message, seeder, sendResponse) {
-
+            this.$store.commit({ type: 'SELECT_FORM', form: null })
         }
-    }
+    },
+    computed: {
+        ...mapState(['form'])
+    },
 }
 </script>
 
