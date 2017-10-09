@@ -15,6 +15,7 @@
         <v-card-actions>
             <v-layout>
                 <v-flex class="text-xs-center">
+                    <v-btn v-if="form" v-clipboard="formStr">Copiar</v-btn>
                     <v-btn error @click="detach()" v-if="formsAttached">Cancelar</v-btn>
                     <v-btn success @click="attach()" v-else>Seleccionar</v-btn>
                 </v-flex>
@@ -34,16 +35,22 @@ export default {
         attach() {
             this.$send('ATTACH_FORMS')
             this.formsAttached = true
-            this.jso
         },
         detach() {
             this.$send('DETACH_FORMS')
             this.formsAttached = false
             this.$store.commit({ type: 'SELECT_FORM', form: null })
+        },
+        copy() {
+
         }
     },
     computed: {
-        ...mapState(['form'])
+        ...mapState(['form']),
+
+        formStr() {
+            return JSON.stringify(this.form || {})
+        }
     },
 }
 </script>
