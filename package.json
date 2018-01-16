@@ -6,6 +6,7 @@
   "private": false,
   "scripts": {
     "watch": "webpack -w",
+    "dev": "webpack",
     "postinstall": "webpack"
   },
   "dependencies": {

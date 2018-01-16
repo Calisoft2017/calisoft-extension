@@ -27,6 +27,14 @@ export function selectForm(event) {
     chrome.runtime.sendMessage({ type: 'SELECT_FORM', form })
 }
 
+// Tipos de input a ser calificados
+const TYPES = [
+    "text", "password", "email", "number", "tel", "url", "file"
+]
+
+// Atributos a ser ignorados
+const IGNORE_ATTRIBUTES = ["class", "style"]
+
 /**
  * Extrae los inputs del formulario en formato
  * @param {HTMLFormElement} form
@@ -34,11 +42,15 @@ export function selectForm(event) {
  */
 export function getFormInputs(form) {
     let inputs = form.querySelectorAll('input');
-    return Array.from(inputs).map(elem => {
-        let input = {};
-        for (let attr of elem.attributes) {
-            input[attr.name] = attr.value
-        }
-        return input;
-    });
+    return Array.from(inputs)
+        .filter(elem => TYPES.indexOf(elem.type) >= 0) // Filtra los tipos de input
+        .map(elem => {
+            let input = {};
+            for (let attr of elem.attributes) {
+                if(IGNORE_ATTRIBUTES.indexOf(attr.name) == -1) { // Filtra los attributos a ignorar
+                    input[attr.name] = attr.value // Agrega el atributo al objeto input
+                }
+            }
+            return input;
+        });
 }
