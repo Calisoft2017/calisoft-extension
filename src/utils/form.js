@@ -29,7 +29,7 @@ export function selectForm(event) {
 
 // Tipos de input a ser calificados
 const TYPES = [
-    "text", "password", "email", "number", "tel", "url", "file"
+    "text", "password", "email", "number", "tel", "url"
 ]
 
 // Atributos a ser ignorados
