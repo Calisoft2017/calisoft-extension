@@ -7,9 +7,17 @@
   "scripts": {
     "watch": "webpack -w",
     "dev": "webpack",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "test": "jest"
   },
   "dependencies": {
+    "json-formatter-js": "^2.2.0",
+    "vue": "^2.4.4",
+    "vue-clipboards": "^1.1.0",
+    "vuetify": "^0.15.7",
+    "vuex": "^2.4.1"
+  },
+  "devDependencies": {
     "@types/chrome": "^0.0.49",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -17,15 +25,12 @@
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.7",
     "file-loader": "^0.11.2",
-    "json-formatter-js": "^2.2.0",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "vue": "^2.4.4",
-    "vue-clipboards": "^1.1.0",
+    "webpack": "^3.6.0",
+    "babel-jest": "^23.0.1",
+    "jest": "^23.0.1",
     "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
-    "vuetify": "^0.15.7",
-    "vuex": "^2.4.1",
-    "webpack": "^3.6.0"
+    "vue-template-compiler": "^2.4.4"
   }
 }
